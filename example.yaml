@@ -1,0 +1,30 @@
+//it's clear. The result of execution which is dot-file of graph
+output path: test1\LastGraph2.dot
+//it's really clear.
+number of libraries: 2
+libraries:
+// for edges coloring and labling
+ - name: library0   
+// You can write here the number of insert size (I suppose that you know what is it or you shouldn't really read it), special word 'count' which means that new file with .his-format will be created (default) or path to the .his-file
+// NB! the counting of IS is linear of left and right sam-files sizes what could be really long
+   insert size: test1\insert_size_0.his   
+// Path to the left and right .sam-files
+   left sam: test1\left_0.sam
+   right sam: test1\right_0.sam
+// 7000 is default value, you can write any of them
+   minimal contig length: 7000
+// You should write only one of these 3 parametres for the graph. Otherwise -- undefined behaviour. You can not specify any of them but the graph could be not informative in this case
+   minimal weight: 100
+   number of edges: 15
+   density of graph: 50
+// (optional) You can write here the path to the mtrx-file. If you do so, you can just change parametres and receive the result graph for a second (not for minutes or more with large .sam-files)
+// NB! The .mtrx file creates automatically after the execution for every library
+   matrix: test1\matrix_0.mtrx
+ - name: library1
+   insert size: test1\insert_size_1.his
+   left sam: test1\left_1.sam
+   right sam: test1\right_1.sam
+   minimal contig length: 7000
+   minimal weight: 100
+   number of edges: 15
+   density of graph: 50
